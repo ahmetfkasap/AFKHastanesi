@@ -2,6 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+
+
+
 namespace AFKHastanesi.Controllers
 {
     public class HomeController : Controller
@@ -20,6 +26,11 @@ namespace AFKHastanesi.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+        public  async Task<IActionResult> LogOut()
+        {
+            await HttpContext.SignOutAsync();
             return View();
         }
 
