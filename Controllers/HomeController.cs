@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AFKHastanesi.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,8 +31,8 @@ namespace AFKHastanesi.Controllers
         }
         public  async Task<IActionResult> LogOut()
         {
-            await HttpContext.SignOutAsync();
-            return View();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);   
+            return RedirectToAction("Login", "Access");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
