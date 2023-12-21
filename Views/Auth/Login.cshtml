@@ -1,0 +1,21 @@
+﻿@model AFKHastanesi.Models.Kullanici
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="login-form p-4" style="max-width: 400px; width: 100%; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h2 class="mb-4">Login</h2>
+        <form asp-action="Login" asp-controller="Auth">
+            <div class="mb-3">
+                <label asp-for="KullaniciEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" asp-for="KullaniciEmail" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+                <label asp-for="KullaniciSifre" class="form-label">Password</label>
+                <input type="password" class="form-control" asp-for="KullaniciSifre" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

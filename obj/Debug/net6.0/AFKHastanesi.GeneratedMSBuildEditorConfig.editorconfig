@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\CENG3.1\web programlama\Odev\AFKHastanesi
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Access/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzXExvZ2luLmNzaHRtbA==
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Home/Index.cshtml]
