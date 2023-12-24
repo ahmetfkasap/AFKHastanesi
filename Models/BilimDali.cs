@@ -1,7 +1,10 @@
-﻿namespace AFKHastanesi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AFKHastanesi.Models
 {
     public class BilimDali
     {
+        [Key]
         public int BilimDaliID { get; set; }
         public string BilimDaliAdi { get; set; }
         public ICollection<Doktor> Doktorlar { get; set; }

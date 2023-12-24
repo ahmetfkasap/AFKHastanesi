@@ -43,7 +43,7 @@ namespace AFKHastanesi.Controllers
 
             if (check!=null)
             {
-                int rol = authContext.Roller.SingleOrDefault(u => u.KullaniciID == check.KullaniciId).RolTipiID;
+                int rol = authContext.Roller.SingleOrDefault(u => u.KullaniciID == check.KullaniciID).RolTipiID;
 
                 var claims = new List<Claim>() {
                     new Claim(ClaimTypes.Email,kullanici.KullaniciEmail),
@@ -110,7 +110,7 @@ namespace AFKHastanesi.Controllers
             {
                 authContext.Kullanicilar.Add(kullanici);
                 authContext.SaveChanges();
-                int id = authContext.Kullanicilar.Where(u => u.KullaniciEmail == kullanici.KullaniciEmail).Select(u => u.KullaniciId).FirstOrDefault(); ;
+                int id = authContext.Kullanicilar.Where(u => u.KullaniciEmail == kullanici.KullaniciEmail).Select(u => u.KullaniciID).FirstOrDefault(); ;
 
                 Rol r = new Rol()
                 {

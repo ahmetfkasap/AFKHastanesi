@@ -5,7 +5,7 @@ namespace AFKHastanesi.Models
     public class Kullanici
     {
         [Key]
-        public int KullaniciId { get; set; }
+        public int KullaniciID { get; set; }
         
         public string KullaniciAdi { get; set; }
         
@@ -15,5 +15,6 @@ namespace AFKHastanesi.Models
   
         public string KullaniciSifre { get; set; }
         public ICollection<Rol> Roller { get; set; }
+        public ICollection<Randevu> Randevular { get; set; }
     }
 }

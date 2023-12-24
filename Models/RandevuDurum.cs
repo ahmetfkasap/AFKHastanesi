@@ -1,9 +1,12 @@
-﻿namespace AFKHastanesi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AFKHastanesi.Models
 {
     public class RandevuDurum
     {
-        public int DurumID { get; set; }
-        public string DurumAdi { get; set; }
+        [Key]
+        public int RandevuDurumID { get; set; }
+        public string RandevuDurumAdi { get; set; }
         public ICollection<Randevu> Randevular { get; set; }
     }
 }

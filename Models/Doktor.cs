@@ -1,7 +1,10 @@
-﻿namespace AFKHastanesi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AFKHastanesi.Models
 {
     public class Doktor
     {
+        [Key]
         public int DoktorID { get; set; }
         public string DoktorAdi { get; set; }
         public string DoktorSoyadi { get; set; }
