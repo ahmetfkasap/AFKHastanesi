@@ -1,5 +1,4 @@
 ﻿using AFKHastanesi.Models;
-using HastaneRandevuSistemi.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +22,7 @@ namespace AFKHastanesi.Controllers
     public class HastaController : Controller
     {
         AppDbContext hastaContext = new AppDbContext();
-        Uri baseAddress = new Uri("https://localhost:7178/Api");
+        Uri baseAddress = new Uri("https://localhost:7201/Api");
         HttpClient _client;
         public IActionResult Index()
         {
