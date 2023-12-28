@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+@model Poliklinik
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="p-4" style="max-width: 400px; width: 100%; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        @{
+            if (ViewBag.HataMsg != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.HataMsg
+                </div>
+            }
+        }
+        <h2 class="mb-4">Poliklinik Ekle</h2>
+        <form method="post" asp-action="PoliklinikEkle" asp-controller="Admin">
+            <div class="mb-3">
+                <label asp-for="PoliklinikAdi" class="form-label">Poliklinik Adı</label>
+                <input asp-for="PoliklinikAdi" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label asp-for="BilimDaliID" class="form-label">Bilim Dalı</label>
+                <select asp-for="BilimDaliID" class="form-control" asp-items="ViewBag.BilimDallari">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DoktorID" class="form-label">Doktor</label>
+                <select asp-for="DoktorID" class="form-control">
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Ekle"></input>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#BilimDaliID").change(function () {
+            var bilimDaliId = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "/Admin/GetDoktorlar",  // Bu URL'yi kontrolcünüzdeki bir aksiyona göre güncelleyin
+                data: { bilimDaliId: bilimDaliId },
+                success: function (data) {
+                    // Gelen doktor verilerini kullanarak doktorlar select'ini güncelle
+                    $("#DoktorID").empty();
+                    $.each(data, function (index, item) {
+                        $("#DoktorID").append('<option value="' + item.value + '">' + item.text + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>

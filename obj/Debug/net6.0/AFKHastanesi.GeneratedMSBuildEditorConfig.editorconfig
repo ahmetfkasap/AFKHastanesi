@@ -18,8 +18,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Lenovo\Desktop\CENG3.1\web programlama\Odev\AFKHastanesi
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/BilimDaliEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmlsaW1EYWxpRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/BilimDaliListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQmlsaW1EYWxpTGlzdGVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/DoktorEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRG9rdG9yRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/DoktorListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRG9rdG9yTGlzdGVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/PoliklinikEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUG9saWtsaW5pa0VrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/PoliklinikListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUG9saWtsaW5pa0xpc3RlbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Auth/Login.cshtml]

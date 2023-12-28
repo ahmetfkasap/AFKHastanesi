@@ -22,10 +22,12 @@ namespace AFKHastanesi.Controllers
             {
                 string rol = HttpContext.User.FindFirst(ClaimTypes.Role)?.Value;
 
-                switch ("1")
+                switch (rol)
                 {
                     case "1":
                         return RedirectToAction("Index", "Hasta");
+                    case "2":
+                        return RedirectToAction("Index", "Admin");
 
                     default:
                         return RedirectToAction("Index", "Hasta");

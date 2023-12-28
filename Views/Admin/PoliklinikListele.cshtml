@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+<div class="text-center">
+    <h2 class="text-center">Poliklinik Listesi</h2>
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Poliklinik Adı</th>
+                <th scope="col" class="text-center">Bilim Dalı</th>
+                <th scope="col" class="text-center">Doktor</th>
+                <th scope="col" class="text-center">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var poliklinik in ViewBag.Poliklinikler)
+                {
+                    <tr>
+                        <td scope="row" class="text-center">@poliklinik.PoliklinikAdi</td>
+                        <td class="text-center">@poliklinik.BilimDaliID</td>
+                        <td scope="row" class="text-center">@poliklinik.DoktorID</td>
+                        <td>
+                            <form class="text-center mb-2" asp-controller="Admin" asp-action="PoliklinikSil" method="post">
+                                <input type="hidden" name="id" value=@poliklinik.PoliklinikID>
+                                <input type="submit" value="Doktor Sil" class="btn btn-danger" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+<div class="text-center">
+    <h2 class="text-center">Bilim Dali Listesi</h2>
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Bilim Dalı Adı</th>
+                <th scope="col" class="text-center">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var bilimdali in ViewBag.BilimDallari)
+                {
+                    <tr>
+                        <td scope="row" class="text-center">@bilimdali.BilimDaliAdi</td>
+                        <td>
+                            <form class="text-center mb-2" asp-controller="Admin" asp-action="BilimDaliSil" method="post">
+                                <input type="hidden" name="id" value=@bilimdali.BilimDaliID>
+                                <input type="submit" value="Bilim Dalı Sil" class="btn btn-danger" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

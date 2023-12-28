@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model BilimDali
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="p-4" style="max-width: 400px; width: 100%; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        @{
+            if (ViewBag.HataMsg != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.HataMsg
+                </div>
+            }
+        }
+        <h2 class="mb-4">Bilim Dalı Ekle</h2>
+        <form method="post" asp-action="BilimDaliEkle" asp-controller="Admin">
+            <div class="mb-3">
+                <label asp-for="BilimDaliAdi" class="form-label">Bilim Dalı Adı</label>
+                <input asp-for="BilimDaliAdi" type="text" class="form-control" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Ekle" />
+        </form>
+    </div>
+</div>

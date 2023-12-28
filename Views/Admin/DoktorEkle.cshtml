@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model Doktor
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="p-4" style="max-width: 400px; width: 100%; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        @{
+            if (ViewBag.HataMsg != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.HataMsg
+                </div>
+            }
+        }
+        <h2 class="mb-4">Doktor Ekle</h2>
+        <form method="post" asp-action="DoktorEkle" asp-controller="Admin">
+            <div class="mb-3">
+                <label asp-for="DoktorAdi" class="form-label">Doktor Adı</label>
+                <input asp-for="DoktorAdi" type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label asp-for="DoktorSoyadi" class="form-label">Doktor Soyadı</label>
+                <input type="text" class="form-control" asp-for="DoktorSoyadi"  required>
+            </div>
+            <div class="mb-3">
+                <label asp-for="BilimDaliID" class="form-label">Bilim Dalı</label>
+                <select asp-for="BilimDaliID" class="form-control" asp-items="ViewBag.BilimDallari">
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Ekle"/>
+        </form>
+    </div>
+</div>

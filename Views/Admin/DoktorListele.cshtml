@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+<div class="text-center">
+    <h2 class="text-center">Doktor Listesi</h2>
+    <table class="table table-striped mt-2">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Doktor Adı</th>
+                <th scope="col" class="text-center">Bilim Dalı</th>
+                <th scope="col" class="text-center">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var doktor in ViewBag.Doktorlar)
+                {
+                    <tr>
+                        <td scope="row" class="text-center">@doktor.DoktorAdi @doktor.DoktorSoyadi</td>
+                        <td class="text-center">@doktor.BilimDaliID</td>
+                        <td>
+                            <form class="text-center mb-2" asp-controller="Admin" asp-action="DoktorSil" method="post">
+                                <input type="hidden" name="id" value=@doktor.DoktorID>
+                                <input type="submit" value="Doktor Sil" class="btn btn-danger" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
