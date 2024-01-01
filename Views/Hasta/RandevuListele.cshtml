@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_HastaLayout";
+}
+
+<table class="table table-striped mt-2">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Bilim Dalı</th>
+            <th scope="col" class="text-center">Doktor Adı</th>
+            <th scope="col" class="text-center">Poliklinik</th>
+            <th scope="col" class="text-center">Tarih</th>
+            <th scope="col" class="text-center">Saat</th>
+            <th scope="col" class="text-center">Randevu Al</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var randevu in ViewBag.Randevular)
+            {
+                <tr>
+                    <td scope="row" class="text-center">@randevu.BilimDaliAdi</td>
+                    <td class="text-center">@randevu.DoktorAdi @randevu.DoktorSoyadi</td>
+                    <td class="text-center">@randevu.PoliklinikAdi</td>
+                    <td class="text-center">@randevu.RandevuTarihi.ToLocalTime().ToShortDateString()</td>
+                    <td class="text-center">@randevu.RandevuTarihi.ToLocalTime().ToShortTimeString()</td>
+                    <td>
+                        <form class="text-center mb-2" asp-controller="Hasta" asp-action="RandevuAl" method="post">
+                            <input type="hidden" name="id" value=@randevu.RandevuID>
+                            <input type="submit" value="Ekle" class="btn btn-success" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

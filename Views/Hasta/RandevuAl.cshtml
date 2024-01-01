@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_HastaLayout";
+}
+
+@model Randevu
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="p-4" style="max-width: 400px; width: 100%; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        @{
+            if (ViewBag.HataMsg != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.HataMsg
+                </div>
+            }
+        }
+        <h2 class="mb-4">Randevu Form</h2>
+        <form method="post" asp-action="RandevuListele" asp-controller="Hasta">
+            <div class="mb-3">
+                <label asp-for="BilimDaliID" class="control-label">Bilim Dalı Seç:</label>
+                <select asp-for="BilimDaliID" class="form-control" asp-items="ViewBag.BilimDallari" required>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="RandevuTarihi" class="control-label">Randevu Tarihi Seç:(Bulunduğunuz Tarihten Sonraki 30 Gün İçin)</label>
+                <input asp-for="RandevuTarihi" type="date" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Randevu Listele"></input>
+        </form>
+    </div>
+</div>

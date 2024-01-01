@@ -28,6 +28,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="SignUp">Kayıt Ol</a>
                         </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"> Dil</button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="en-US" class="dropdown-item">
+                                            <i class="flag-icon flag-icon-gb"></i> English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="dropdown-item">
+                                            <i class="flag-icon flag-icon-gb"></i> Türkçe
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

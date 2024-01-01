@@ -47,7 +47,18 @@ namespace AFKHastanesi.Controllers
                 return RedirectToAction("DoktorEkle", ViewBag.HataMsg);
             }
 
+            int sonPoliklinik = appDbContext.Poliklinikler.OrderByDescending(p => p.PoliklinikID).Select(p => p.PoliklinikID).FirstOrDefault() + 1;
+
             appDbContext.Doktorlar.Add(doktor); 
+            appDbContext.SaveChanges();
+
+            Poliklinik yeniPoliklinik = new Poliklinik() { 
+                PoliklinikAdi= "Poliklinik"+sonPoliklinik,
+                BilimDaliID= doktor.BilimDaliID,
+                DoktorID = appDbContext.Doktorlar.SingleOrDefault(d=> (d.DoktorAdi == doktor.DoktorAdi && d.DoktorSoyadi == doktor.DoktorSoyadi)).DoktorID
+            };
+
+            appDbContext.Poliklinikler.Add(yeniPoliklinik);
             appDbContext.SaveChanges();
 
             return RedirectToAction("DoktorListele");
@@ -64,51 +75,13 @@ namespace AFKHastanesi.Controllers
                 appDbContext.Doktorlar.Remove(deleteDoktor);
             }
             appDbContext.SaveChanges();
-            return RedirectToAction("DoktorListele");
+            return RedirectToAction("PoliklinikSil",id);
         }
 
-        [HttpGet]
-        public IActionResult PoliklinikEkle()
-        {
-            if (TempData.ContainsKey("HataMsg"))
-            {
-                ViewBag.HataMsg = TempData["HataMsg"];
-            }
-
-            List<BilimDali> bilimDalis = new List<BilimDali>();
-            bilimDalis = appDbContext.BilimDallari.ToList();
-
-            ViewBag.BilimDallari = new List<SelectListItem>();
-
-            foreach (var item in bilimDalis)
-            {
-                ViewBag.BilimDallari.Add(new SelectListItem { Value = item.BilimDaliID.ToString(), Text = item.BilimDaliAdi });
-            }
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult PoliklinikEkle(Poliklinik poliklinik)
-        {
-
-            bool poliklinikVarMi = appDbContext.Poliklinikler.Any(p => (p.PoliklinikAdi == poliklinik.PoliklinikAdi && p.BilimDaliID == poliklinik.BilimDaliID));
-
-            if (poliklinikVarMi)
-            {
-                TempData["HataMsg"] = "Girdiğiniz Doktor Sistemde Bulunmaktadır !!!";
-                return RedirectToAction("PoliklinikEkle", ViewBag.HataMsg);
-            }
-
-            appDbContext.Poliklinikler.Add(poliklinik);
-            appDbContext.SaveChanges();
-
-            return RedirectToAction("DoktorListele");
-        }
-
-        [HttpPost]
+        
         public IActionResult PoliklinikSil(int id)
         {
-            var deletePoliklinik = appDbContext.Poliklinikler.SingleOrDefault(e => e.PoliklinikID == id);
+            var deletePoliklinik = appDbContext.Poliklinikler.SingleOrDefault(e => e.DoktorID == id);
 
             // Veriyi güncelle
             if (deletePoliklinik != null)
@@ -116,7 +89,7 @@ namespace AFKHastanesi.Controllers
                 appDbContext.Poliklinikler.Remove(deletePoliklinik);
             }
             appDbContext.SaveChanges();
-            return RedirectToAction("BilimDalListele");
+            return RedirectToAction("DoktorListele");
         }
 
         [HttpGet]

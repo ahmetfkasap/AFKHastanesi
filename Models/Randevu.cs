@@ -6,7 +6,7 @@ namespace AFKHastanesi.Models
     {
         [Key]
         public int RandevuID { get; set; }
-        public int KullaniciID { get; set; }
+        public int? KullaniciID { get; set; }
         public int BilimDaliID { get; set; }
         public int PoliklinikID { get; set; }
         public int DoktorID { get; set; }

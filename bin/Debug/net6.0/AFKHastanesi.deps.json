@@ -17,6 +17,14 @@
         },
         "runtime": {
           "AFKHastanesi.dll": {}
+        },
+        "resources": {
+          "en-US/AFKHastanesi.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/AFKHastanesi.resources.dll": {
+            "locale": "tr-TR"
+          }
         }
       },
       "Humanizer/2.14.1": {

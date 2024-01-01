@@ -1,12 +1,16 @@
 ﻿@{
+    Layout = "_HastaLayout";
+}
+
+@{
     foreach (var randevu in ViewBag.Randevular)
     {
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <span class="text-white bg-info rounded rounded-5 card-title">@randevu.RandevuTarihSaat </span>
+                <span class="text-white bg-info rounded rounded-5 card-title">@randevu.RandevuTarihi.ToLocalTime() </span>
                 <h6 class="card-subtitle mb-2 text-body-secondary">@randevu.BilimDaliAdi</h6>
                 <p class="card-text">
-                    @randevu.BilimDaliAdi - @randevu.DoktorAdi @randevu.DoktorSoyadi
+                    @randevu.PoliklinikAdi - @randevu.DoktorAdi @randevu.DoktorSoyadi
                 </p>
                 @{
                     switch (@randevu.RandevuDurumAdi)
@@ -24,54 +28,19 @@
                             break;
                     }
                 }
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-        <div class="card mt-3">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <span class="text-white bg-info rounded rounded-5 px-2 py-1">@randevu.RandevuTarihSaat </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        @{
-                            switch (@randevu.DurumAdi)
-                            {
-                                case "Aktif":
-                                    <span class="text-white bg-success rounded rounded-5 px-2 py-1 fw-light"> Aktif Randevu</span>
-                                    break;
-                                case "İptal":
-                                    <span class="text-white bg-danger rounded rounded-5 px-2 py-1 fw-light">İptal Randevu</span>
-                                    break;
-                                case "Geçmiş":
-                                    <span class="text-dark bg-secondary rounded rounded-5 px-2 py-1 fw-light">Geçmiş Randevu</span>
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                    </div>
-                    <div class="col-md-8 border border-light-subtle">
-                        <p class="fw-light">
-                            
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <p class="fw-light text-primary ">
-                            @randevu.MuayeneTurAdi
-                        </p>
-                    </div>
-                    <div class="col-md-8 border border-light-subtle">
-                        <p class="fw-light">
-                            
-                        </p>
-                    </div>
-                </div>
+                @{
+                    if (randevu.RandevuDurumAdi != "İptal")
+                    {
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form asp-controller="Hasta" asp-action="RandevuSil" method="post">
+                                    <input type="hidden" name="id" value=@randevu.RandevuID>
+                                    <input type="submit" value="Randevu Sil" class="btn btn-danger" />
+                                </form>
+                            </div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     }

@@ -38,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/PoliklinikEkle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUG9saWtsaW5pa0VrbGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Admin/PoliklinikListele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUG9saWtsaW5pa0xpc3RlbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,12 +50,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/HastaBilgileri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcSGFzdGFCaWxnaWxlcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/RandevuAl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcUmFuZGV2dUFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/Randevular.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcUmFuZGV2dWxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Hasta/RandevuListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFzdGFcUmFuZGV2dUxpc3RlbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Desktop/CENG3.1/web programlama/Odev/AFKHastanesi/Views/Home/Index.cshtml]
