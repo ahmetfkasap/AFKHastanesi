@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HomeText" xml:space="preserve">
+    <value>Health is the key to true wealth. It is our most precious heritage and taking care of it adds value to our lives.</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
-    <value>Welcome Bro</value>
+    <value>Welcome to AFK Hospital</value>
   </data>
 </root>
